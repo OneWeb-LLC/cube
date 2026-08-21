@@ -1,0 +1,92 @@
+@import url("https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Manrope:wght@400;500;600;700;800&display=swap");
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Manrope", ui-sans-serif, system-ui, sans-serif;
+}
+
+:root {
+  --bg: var(--bg-base);
+  --fg: var(--sea-ink);
+  --muted: var(--sea-ink-soft);
+  --border: var(--line);
+  --bg-raised: var(--surface-strong);
+  --lagoon-400: var(--lagoon);
+  --lagoon-500: var(--lagoon-deep);
+  --lagoon-600: var(--lagoon-deep);
+  --sea-ink: #173a40;
+  --sea-ink-soft: #416166;
+  --lagoon: #4fb8b2;
+  --lagoon-deep: #328f97;
+  --palm: #2f6a4a;
+  --sand: #e7f0e8;
+  --foam: #f3faf5;
+  --surface: rgba(255, 255, 255, 0.74);
+  --surface-strong: rgba(255, 255, 255, 0.9);
+  --line: rgba(23, 58, 64, 0.14);
+  --bg-base: #e7f3ec;
+  --header-bg: rgba(251, 255, 248, 0.84);
+  --hero-a: rgba(79, 184, 178, 0.36);
+  --hero-b: rgba(47, 106, 74, 0.2);
+}
+
+:root[data-theme="dark"] {
+  --sea-ink: #d7ece8;
+  --sea-ink-soft: #afcdc8;
+  --lagoon: #60d7cf;
+  --lagoon-deep: #8de5db;
+  --palm: #6ec89a;
+  --sand: #0f1a1e;
+  --foam: #101d22;
+  --surface: rgba(16, 30, 34, 0.8);
+  --surface-strong: rgba(15, 27, 31, 0.92);
+  --line: rgba(141, 229, 219, 0.18);
+  --bg-base: #0a1418;
+  --header-bg: rgba(10, 20, 24, 0.8);
+  --hero-a: rgba(96, 215, 207, 0.18);
+  --hero-b: rgba(110, 200, 154, 0.12);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --sea-ink: #d7ece8;
+    --sea-ink-soft: #afcdc8;
+    --lagoon: #60d7cf;
+    --lagoon-deep: #8de5db;
+    --palm: #6ec89a;
+    --sand: #0f1a1e;
+    --foam: #101d22;
+    --surface: rgba(16, 30, 34, 0.8);
+    --surface-strong: rgba(15, 27, 31, 0.92);
+    --line: rgba(141, 229, 219, 0.18);
+    --bg-base: #0a1418;
+    --header-bg: rgba(10, 20, 24, 0.8);
+    --hero-a: rgba(96, 215, 207, 0.18);
+    --hero-b: rgba(110, 200, 154, 0.12);
+  }
+}
+
+* { box-sizing: border-box; }
+html, body { min-height: 100%; }
+body {
+  margin: 0;
+  color: var(--sea-ink);
+  font-family: var(--font-sans);
+  background:
+    radial-gradient(1100px 620px at -8% -10%, var(--hero-a), transparent 58%),
+    radial-gradient(1050px 620px at 112% -12%, var(--hero-b), transparent 62%),
+    linear-gradient(180deg, var(--sand) 0%, var(--foam) 44%, var(--bg-base) 100%);
+  -webkit-font-smoothing: antialiased;
+}
+
+.island-kicker {
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 0.69rem;
+  color: var(--palm);
+}
+
+.display-title {
+  font-family: "Fraunces", Georgia, serif;
+}

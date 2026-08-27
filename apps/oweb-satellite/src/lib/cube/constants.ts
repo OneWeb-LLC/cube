@@ -16,10 +16,15 @@ export function getCubePublicUrl(): string {
   return (fromEnv || CUBE_DEFAULT_PUBLIC_URL).replace(/\/$/, '')
 }
 
-export function owebLoginUrl(options?: { launch?: boolean; redirect?: string }): string {
+export function owebLoginUrl(options?: { launch?: boolean }): string {
   const url = new URL('/login', getOwebAppUrl())
   if (options?.launch) url.searchParams.set('launch', CUBE_APP_ID)
-  if (options?.redirect) url.searchParams.set('redirect', options.redirect)
+  return url.toString()
+}
+
+export function owebOnboardingUrl(): string {
+  const url = new URL('/onboarding', getOwebAppUrl())
+  url.searchParams.set('launch', CUBE_APP_ID)
   return url.toString()
 }
 
